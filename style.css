@@ -5,3 +5,12 @@
     font-size: 12px;
     color: #6D6D6D;
 }
+.wikigeneratedheader{
+    margin-bottom: 10px;
+}
+tr{
+    width: 100%;
+}
+th{
+    width: 500px;
+}

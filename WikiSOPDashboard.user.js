@@ -295,19 +295,19 @@ function addJobData($) {
             if (typeof out.rows[x].doc_title != "undefined") {
                 docspacetemp = out.rows[x].doc_space.replace(/\./g,'/spaces/');
                 // docspace.push("https://w.amazon.com/rest/wikis/xwiki/spaces/"+docspacetemp+"/pages/WebHome/comments/?media=json");
-                $("#dash-tablebody-total").append("<tr><td><a href='https://w.amazon.com" + out.rows[x].doc_url + "' target='_blank'>" + out.rows[x].doc_title + "</a></td><td style='display:none;'>https://w.amazon.com" + out.rows[x].doc_url + "</td><td>" + sop + "</td><td><a href='https://phonetool.amazon.com/users/" + out.rows[x].doc_creator + "' target='_blank'>" + out.rows[x].doc_creator + "</a></td><td>" + out.rows[x].doc_creationDate + "</td><td>" + timelapse(out.rows[x].doc_date) + " ago.</td></tr>");
+                $("#dash-tablebody-total").append("<tr><td><a href='#' target='_blank'>" + out.rows[x].doc_title + "</a></td><td style='display:none;'>#</td><td>" + sop + "</td><td><a href='#' target='_blank'>" + out.rows[x].doc_creator + "</a></td><td>" + out.rows[x].doc_creationDate + "</td><td>" + timelapse(out.rows[x].doc_date) + " ago.</td></tr>");
                 cntt++;
             }
             if (doccD.getTime() >= prevmonth && doccD.getTime() <= prevmonthend) {
                 docCreator.push(out.rows[x].doc_author);
-                $("#dash-tablebody-update").append("<tr><td><a href='https://w.amazon.com" + out.rows[x].doc_url + "' target='_blank'>" + out.rows[x].doc_title + "</a></td><td>" + sop + "</td><td><a href='https://phonetool.amazon.com/users/" + out.rows[x].doc_author + "' target='_blank'>" + out.rows[x].doc_author + "</a></td><td>" + out.rows[x].doc_date + "</td></tr>");
+                $("#dash-tablebody-update").append("<tr><td><a href='#' target='_blank'>" + out.rows[x].doc_title + "</a></td><td>" + sop + "</td><td><a href='#' target='_blank'>" + out.rows[x].doc_author + "</a></td><td>" + out.rows[x].doc_date + "</td></tr>");
                 dateholder = out.rows[x].doc_date
                 y++;
             }
             if (doccDD.getTime() >= prevmonth && doccDD.getTime() <= prevmonthend) {
                 m++;
-                $("#dash-tablebody-new").append("<tr><td><a href='https://w.amazon.com" + out.rows[x].doc_url + "' target='_blank'>" + out.rows[x].doc_title + "</a></td><td><a href='https://phonetool.amazon.com/users/" + out.rows[x].doc_creator + "' target='_blank'>" + out.rows[x].doc_creator + "</a></td><td>" + out.rows[x].doc_creationDate + "</td></tr>");
-                $("#dash-tablebody-newcreated").append("<tr><td><a href='https://w.amazon.com" + out.rows[x].doc_url + "' target='_blank'>" + out.rows[x].doc_title + "</a></td><td>" + sop + "</td><td><a href='https://phonetool.amazon.com/users/" + out.rows[x].doc_creator + "' target='_blank'>" + out.rows[x].doc_creator + "</a></td><td>" + out.rows[x].doc_creationDate + "</td></tr>");
+                $("#dash-tablebody-new").append("<tr><td><a href='#' target='_blank'>" + out.rows[x].doc_title + "</a></td><td><a href='#' target='_blank'>" + out.rows[x].doc_creator + "</a></td><td>" + out.rows[x].doc_creationDate + "</td></tr>");
+                $("#dash-tablebody-newcreated").append("<tr><td><a href='#' target='_blank'>" + out.rows[x].doc_title + "</a></td><td>" + sop + "</td><td><a href='#' target='_blank'>" + out.rows[x].doc_creator + "</a></td><td>" + out.rows[x].doc_creationDate + "</td></tr>");
             }
             x++;
         }
@@ -322,11 +322,12 @@ function addJobData($) {
             "font-weight": "bold",
             "padding-left": "20px",
             "margin": "0px",
-            "color": "#E6E6E6"
+            "color": "#fff"
         });
         $("#dash-count-text-1,#dash-count-text-2,#dash-count-text-3").css({
             "font-size": "14px",
-            "padding-top": "10px"
+            "padding-top": "10px",
+            "color": "#fff"
         });
         $("#dash-chart canvas,table").css({
             "background-color": "#F5F5F5",
