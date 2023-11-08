@@ -1,22 +1,3 @@
-// ==UserScript==
-// @name         WikiSOPDashboard
-// @namespace    http://tampermonkey.net/
-// @version      1.2
-// @description  Simple Dashboard for SOP wiki
-// @author       @salazar
-// @match        https://w.amazon.com/bin/view/AdServerCreativeSupport/Internal/Tools/WikiSOPDashboard*
-// @downloadURL	 https://drive.corp.amazon.com/view/Amazon%20Ad%20Server%20Tech%20Support/PROJECTS/Wikisopdashboard/wikiSOPDashboard.user.js
-// @updateURL	 https://drive.corp.amazon.com/view/Amazon%20Ad%20Server%20Tech%20Support/PROJECTS/Wikisopdashboard/wikiSOPDashboard.user.js
-// @require		 https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.js
-// @require		 https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js
-// @require      https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js
-// @icon         https://www.google.com/s2/favicons?sz=64&domain=amazon.com
-// @connect      w.amazon.com
-// @grant        GM_xmlhttpRequest
-// @grant        none
-
-// ==/UserScript==
-
 var chartScript = document.createElement('script');
 chartScript.src = "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js";
 document.head.appendChild(chartScript);
@@ -34,6 +15,7 @@ if (typeof jqueryize == 'undefined') {
         document.body.appendChild(script1);
     }
 }
+
 
 function addJobData($) {
     
@@ -339,7 +321,8 @@ function addJobData($) {
             "font-size": "45px",
             "font-weight": "bold",
             "padding-left": "20px",
-            "margin": "30px"
+            "margin": "0px",
+            "color": "#E6E6E6"
         });
         $("#dash-count-text-1,#dash-count-text-2,#dash-count-text-3").css({
             "font-size": "14px",
