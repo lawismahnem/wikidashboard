@@ -294,7 +294,6 @@ function addJobData($) {
             }
             if (typeof out.rows[x].doc_title != "undefined") {
                 docspacetemp = out.rows[x].doc_space.replace(/\./g,'/spaces/');
-                // docspace.push("https://w.amazon.com/rest/wikis/xwiki/spaces/"+docspacetemp+"/pages/WebHome/comments/?media=json");
                 $("#dash-tablebody-total").append("<tr><td><a href='#' target='_blank'>" + out.rows[x].doc_title + "</a></td><td style='display:none;'>#</td><td>" + sop + "</td><td><a href='#' target='_blank'>" + out.rows[x].doc_creator + "</a></td><td>" + out.rows[x].doc_creationDate + "</td><td>" + timelapse(out.rows[x].doc_date) + " ago.</td></tr>");
                 cntt++;
             }
