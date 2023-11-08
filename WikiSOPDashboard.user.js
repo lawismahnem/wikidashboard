@@ -17,6 +17,10 @@
 
 // ==/UserScript==
 
+var chartScript = document.createElement('script');
+chartScript.src = "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js";
+document.head.appendChild(chartScript);
+
 if (typeof jqueryize == 'undefined') {
 
     jqueryize = function(fn) {
@@ -297,6 +301,7 @@ function addJobData($) {
         const docspace = [];
         let docspacetemp="";
         while (x < cnt) {
+            console.log("test", out.rows[x].doc_date)
             const doccD = new Date(out.rows[x].doc_date);
             const doccDD = new Date(out.rows[x].doc_creationDate);
             urltr = out.rows[x].doc_url;
@@ -307,7 +312,7 @@ function addJobData($) {
             }
             if (typeof out.rows[x].doc_title != "undefined") {
                 docspacetemp = out.rows[x].doc_space.replace(/\./g,'/spaces/');
-                docspace.push("https://w.amazon.com/rest/wikis/xwiki/spaces/"+docspacetemp+"/pages/WebHome/comments/?media=json");
+                // docspace.push("https://w.amazon.com/rest/wikis/xwiki/spaces/"+docspacetemp+"/pages/WebHome/comments/?media=json");
                 $("#dash-tablebody-total").append("<tr><td><a href='https://w.amazon.com" + out.rows[x].doc_url + "' target='_blank'>" + out.rows[x].doc_title + "</a></td><td style='display:none;'>https://w.amazon.com" + out.rows[x].doc_url + "</td><td>" + sop + "</td><td><a href='https://phonetool.amazon.com/users/" + out.rows[x].doc_creator + "' target='_blank'>" + out.rows[x].doc_creator + "</a></td><td>" + out.rows[x].doc_creationDate + "</td><td>" + timelapse(out.rows[x].doc_date) + " ago.</td></tr>");
                 cntt++;
             }
